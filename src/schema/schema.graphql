@@ -5,9 +5,6 @@ type Mutation{
 	submitCareers(
 		careersInput: careersInput!
 	): String
-	uploadCv(
-		cvInput: cvInput!
-	): UploadCvResponse!
 	submitEstimate(
 		estimateInput: estimateInput!
 	): String
@@ -33,10 +30,6 @@ input careersInput{
 	cv: String!
 	message: String!
 	exp: String!
-}
-
-input cvInput{
-	name: String!
 }
 
 type UploadCvResponse{
