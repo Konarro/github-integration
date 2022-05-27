@@ -1,0 +1,66 @@
+type Mutation{
+	submitForm(
+		formInput: formInput!
+	): String
+	submitCareers(
+		careersInput: careersInput!
+	): String
+	uploadCv(
+		cvInput: cvInput!
+	): UploadCvResponse!
+	submitEstimate(
+		estimateInput: estimateInput!
+	): String
+}
+
+input formInput{
+	companyName: String!
+	name: String!
+	email: String!
+	phone: String!
+	companyType: String!
+	category: String!
+	message: String!
+}
+
+input careersInput{
+	name: String!
+	phone: String!
+	email: String!
+	availableFrom: String!
+	links: [String!]
+	techStack: [String!]
+	cv: String!
+	message: String!
+	exp: String!
+}
+
+input cvInput{
+	name: String!
+}
+
+type UploadCvResponse{
+	downloadUrl: String!
+	putUrl: String!
+}
+
+type Query{
+	health: String
+}
+
+input estimateInput{
+	tellMore: String!
+	challenges: String!
+	helpWith: [String!]!
+	tech: [String]
+	firstName: String!
+	lastName: String!
+	email: String!
+	phoneNumber: String
+	companyName: String
+	clientRole: String
+}
+schema{
+	query: Query,
+	mutation: Mutation
+}
