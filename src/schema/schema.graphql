@@ -32,6 +32,11 @@ input careersInput{
 	exp: String!
 }
 
+type UploadCvResponse{
+	downloadUrl: String!
+	putUrl: String!
+}
+
 type Query{
 	health: Boolean
 }
